@@ -213,7 +213,7 @@ class WC_Gateway_Payex_Vipps extends WC_Gateway_Payex_Cc
 		$matches = array();
 		preg_match( '/^(\+47)(?:4[015-8]|5[89]|87|9\d)\d{6}$/u', $billing_phone, $matches );
 		if ( ! isset( $matches[0] ) || $matches[0] !== $billing_phone ) {
-			wc_add_notice( __( 'Input your number like this +47xxxxxxxxx', 'woocommerce-gateway-payex-psp' ), 'error' );
+			wc_add_notice( __( 'Invalid phone number and/or country code is missing in the number +47xxxxxxxxx', 'woocommerce-gateway-payex-psp' ), 'error' );
 			return FALSE;
 		}
 
